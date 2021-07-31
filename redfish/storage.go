@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // CacheSummary shall contain properties which describe the cache memory for a
@@ -191,6 +191,10 @@ func (storage *Storage) Drives() ([]*Drive, error) {
 	}
 
 	return result, collectionError
+}
+
+func (storage *Storage) VolumesLink() string {
+	return storage.volumes
 }
 
 // Volumes gets the volumes associated with this storage subsystem.

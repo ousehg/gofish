@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // RedundancyMode is the redundancy mode.

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 var ioConnectivityLineOfServiceBody = strings.NewReader(

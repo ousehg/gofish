@@ -7,9 +7,9 @@ package swordfish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/redfish"
+	"gofish/redfish"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // Capacity is used to represent storage capacity. The sum of the values

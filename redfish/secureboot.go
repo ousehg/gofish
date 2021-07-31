@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // ResetKeysType is method for resetting keys.

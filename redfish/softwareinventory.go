@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // SoftwareInventory is This Resource contains a single software

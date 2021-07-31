@@ -7,7 +7,7 @@ package swordfish
 import (
 	"encoding/json"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // DataStorageLineOfService is used to describe a service option covering

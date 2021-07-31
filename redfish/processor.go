@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/stmcginnis/gofish/common"
+	"gofish/common"
 )
 
 // FpgaInterfaceType is
