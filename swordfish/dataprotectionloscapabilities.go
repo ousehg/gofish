@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // FailureDomainScope shall represent a geographic scope in which all components

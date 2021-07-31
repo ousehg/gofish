@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // Device shall describe a storage device visible to SimpleStorage.

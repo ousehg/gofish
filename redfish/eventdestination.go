@@ -11,7 +11,7 @@ import (
 	"reflect"
 	"strings"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // DeliveryRetryPolicy is the retry policy for delivery failure.

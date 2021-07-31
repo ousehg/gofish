@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // TaskState indicates the state of a task.

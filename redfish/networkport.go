@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // FlowControl is type of flow control for the port.

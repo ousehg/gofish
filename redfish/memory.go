@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // BaseModuleType is the type of module.

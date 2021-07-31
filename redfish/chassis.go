@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // ChassisType is a physical form of the chassis

@@ -7,7 +7,7 @@ package swordfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // DataProtectionLineOfService describes a replica that protects data from loss.

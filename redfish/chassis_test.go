@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 const TestAssetTag = "TestAssetTag"

@@ -7,7 +7,7 @@ package swordfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // IOPerformanceLineOfService is used to define a service option related

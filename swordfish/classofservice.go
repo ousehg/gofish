@@ -7,7 +7,7 @@ package swordfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // ClassOfService shall define a service option composed

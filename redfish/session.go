@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"net/url"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // SessionTypes is the type of session.

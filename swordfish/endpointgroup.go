@@ -8,8 +8,8 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"gofish/common"
-	"gofish/redfish"
+	"github.com/ousehg/gofish/common"
+	"github.com/ousehg/gofish/redfish"
 )
 
 // AccessState is used for associated resources through all

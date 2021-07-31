@@ -7,9 +7,9 @@ package gofish
 import (
 	"encoding/json"
 
-	"gofish/common"
-	"gofish/redfish"
-	"gofish/swordfish"
+	"github.com/ousehg/gofish/common"
+	"github.com/ousehg/gofish/redfish"
+	"github.com/ousehg/gofish/swordfish"
 )
 
 // Expand shall contain information about the support of the $expand query

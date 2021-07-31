@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"strings"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // BiosAttributes handles the Bios attribute values that may be any of several

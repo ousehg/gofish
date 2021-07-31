@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // ReadingUnits is the type of units used for a reading.

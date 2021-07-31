@@ -7,7 +7,7 @@ package redfish
 import (
 	"encoding/json"
 
-	"gofish/common"
+	"github.com/ousehg/gofish/common"
 )
 
 // MemoryDomain is used to represent Memory Domains.

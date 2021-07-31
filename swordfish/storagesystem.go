@@ -7,8 +7,8 @@ package swordfish
 import (
 	"encoding/json"
 
-	"gofish/common"
-	"gofish/redfish"
+	"github.com/ousehg/gofish/common"
+	"github.com/ousehg/gofish/redfish"
 )
 
 // StorageSystem is a Swordfish storage system instance.
