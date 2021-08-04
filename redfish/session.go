@@ -6,8 +6,6 @@ package redfish
 
 import (
 	"encoding/json"
-	"net/url"
-
 	"github.com/ousehg/gofish/common"
 )
 
@@ -95,9 +93,9 @@ func CreateSession(c common.Client, uri, username, password string) (auth *AuthT
 	auth.Token = resp.Header.Get("X-Auth-Token")
 	auth.Session = resp.Header.Get("Location")
 
-	if urlParser, err := url.ParseRequestURI(auth.Session); err == nil {
-		auth.Session = urlParser.RequestURI()
-	}
+	//if urlParser, err := url.ParseRequestURI(auth.Session); err == nil {
+	//	auth.Session = urlParser.RequestURI()
+	//}
 
 	return auth, err
 }
