@@ -36,6 +36,60 @@ const (
 	WebUISessionTypes SessionTypes = "WebUI"
 )
 
+type SessionService struct {
+	common.Entity
+
+	// ODataContext is the odata context.
+	ODataContext string `json:"@odata.context"`
+	// ODataType is the odata type.
+	ODataType string `json:"@odata.type"`
+	// Sessions shall be a link to a collection of type Session.
+	Sessions string `json:"Sessions"`
+	// rawData holds the original serialized JSON so we can compare updates.
+	rawData []byte
+}
+
+// UnmarshalJSON unmarshals a SessionService object from the raw JSON.
+func (sessionService *SessionService) UnmarshalJSON(b []byte) error {
+	type temp SessionService
+	var t struct {
+		temp
+		Sessions common.Link
+	}
+
+	err := json.Unmarshal(b, &t)
+	if err != nil {
+		return err
+	}
+
+	// Extract the links to other entities
+	*sessionService = SessionService(t.temp)
+	sessionService.Sessions = string(t.Sessions)
+
+	// This is a read/write object, so we need to save the raw object data for later
+	sessionService.rawData = b
+
+	return nil
+}
+
+// GetSessionService will get a SessionService instance from the service.
+func GetSessionService(c common.Client, uri string) (*SessionService, error) {
+	resp, err := c.Get(uri)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	var sessionservice SessionService
+	err = json.NewDecoder(resp.Body).Decode(&sessionservice)
+	if err != nil {
+		return nil, err
+	}
+
+	sessionservice.SetClient(c)
+	return &sessionservice, nil
+}
+
 // Session describes a single connection (session) between a client and a
 // Redfish service instance.
 type Session struct {
