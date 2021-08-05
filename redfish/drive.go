@@ -189,7 +189,7 @@ type Drive struct {
 	PhysicalLocation common.Location
 	// PredictedMediaLifeLeftPercent shall contain an indicator of the
 	// percentage of life remaining in the Drive's media.
-	PredictedMediaLifeLeftPercent float32
+	PredictedMediaLifeLeftPercent float32 `json:"-"`
 	// Protocol shall contain the protocol the associated drive is using to
 	// communicate to the storage controller for this system.
 	Protocol common.Protocol
