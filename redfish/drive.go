@@ -160,7 +160,7 @@ type Drive struct {
 	// light associated with this drive.
 	IndicatorLED common.IndicatorLED
 	// Location shall contain location information of the associated drive.
-	Location []common.Location
+	Location []common.Location `json:"-"`
 	// Manufacturer shall be the name of the organization responsible for
 	// producing the drive. This organization might be the entity from whom the
 	// drive is purchased, but this is not necessarily true.
