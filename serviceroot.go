@@ -257,7 +257,10 @@ func (serviceroot *Service) Tasks() ([]*redfish.Task, error) {
 
 // CreateSession creates a new session and returns the token and id
 func (serviceroot *Service) CreateSession(username, password string) (*redfish.AuthToken, error) {
-	return redfish.CreateSession(serviceroot.Client, serviceroot.sessions, username, password)
+	if serviceroot.sessions != "" {
+		return redfish.CreateSession(serviceroot.Client, serviceroot.sessions, username, password)
+	}
+	return redfish.CreateSession(serviceroot.Client, "/redfish/v1/SessionService/Sessions", username, password)
 }
 
 // Sessions gets the system's active sessions
