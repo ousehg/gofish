@@ -736,7 +736,7 @@ func (computersystem *ComputerSystem) SecureBoot() (*SecureBoot, error) {
 }
 
 // SetBoot set a boot object based on a payload request
-func (computersystem *ComputerSystem) SetBoot(b Boot) error { // nolint
+func (computersystem *ComputerSystem) SetBoot(b Boot, header map[string]string) error { // nolint
 	type temp struct {
 		Boot Boot
 	}
@@ -744,7 +744,7 @@ func (computersystem *ComputerSystem) SetBoot(b Boot) error { // nolint
 		Boot: b,
 	}
 
-	_, err := computersystem.Client.Patch(computersystem.ODataID, t)
+	_, err := computersystem.Client.PatchWithHeaders(computersystem.ODataID, t, header)
 	return err
 }
 
