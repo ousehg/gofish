@@ -315,7 +315,7 @@ type Boot struct {
 	// configuration.
 	BootSourceOverrideTarget BootSourceOverrideTarget `json:",omitempty"`
 	// BootSourceOverrideTargetList is BootSourceOverrideTarget collection
-	BootSourceOverrideTargetList []string `json:"BootSourceOverrideTarget@Redfish.AllowableValues"`
+	BootSourceOverrideTargetList []string `json:"BootSourceOverrideTarget@Redfish.AllowableValues,omitempty"`
 	// UefiTargetBootSourceOverride shall be
 	// the UEFI device path of the override boot target. The valid values for
 	// this property are specified through the Redfish.AllowableValues
