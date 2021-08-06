@@ -289,7 +289,14 @@ type StorageController struct {
 	// StorageServicesCount is the number of storage services.
 	StorageServicesCount int
 	// rawData holds the original serialized JSON so we can compare updates.
+	Oem     OemStorageController
 	rawData []byte
+}
+
+type OemStorageController struct {
+	Huawei struct {
+		Type string
+	}
 }
 
 // UnmarshalJSON unmarshals a StorageController object from the raw JSON.
