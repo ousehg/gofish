@@ -295,8 +295,13 @@ type StorageController struct {
 
 type OemStorageController struct {
 	Huawei struct {
-		Type string
-	}
+		Mode      string `json:"Mode"`
+		JBODState string `json:"JBODState"`
+	} `json:"Huawei"`
+	H3C struct {
+		Mode      string `json:"Mode"`
+		JBODState string `json:"JBODState"`
+	} `json:"Public"`
 }
 
 // UnmarshalJSON unmarshals a StorageController object from the raw JSON.
