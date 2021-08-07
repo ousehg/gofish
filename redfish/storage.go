@@ -295,12 +295,12 @@ type StorageController struct {
 
 type OemStorageController struct {
 	Huawei struct {
-		Mode      string `json:"Mode"`
-		JBODState bool   `json:"JBODState"`
+		Mode      string      `json:"Mode"`
+		JBODState interface{} `json:"JBODState"`
 	} `json:"Huawei"`
 	H3C struct {
-		Mode      string `json:"Mode"`
-		JBODState bool   `json:"JBODState"`
+		Mode      string      `json:"Mode"`
+		JBODState interface{} `json:"JBODState"`
 	} `json:"Public"`
 }
 
