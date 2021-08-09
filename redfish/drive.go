@@ -231,8 +231,25 @@ type Drive struct {
 	StoragePoolsCount int
 	// secureEraseTarget is the URL for SecureErase actions.
 	secureEraseTarget string
+	Oem               OemDrive
 	// rawData holds the original serialized JSON so we can compare updates.
 	rawData []byte
+}
+
+type OemDrive struct {
+	Dell struct {
+		DellPhysicalDisk struct {
+			RaidStatus string `json:"RaidStatus"`
+		}
+	} `json:"Dell"`
+	Huawei struct {
+		DriveID        int    `json:"DriveId"`
+		FirmwareStatus string `json:"FirmwareStatus"`
+	} `json:"Huawei"`
+	H3C struct {
+		ConnectionID   int    `json:"ConnectionId"`
+		FirmwareStatus string `json:"FirmwareStatus"`
+	} `json:"Public"`
 }
 
 // UnmarshalJSON unmarshals a Drive object from the raw JSON.
