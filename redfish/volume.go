@@ -188,8 +188,31 @@ type Volume struct {
 	OptimumIOSizeBytes int
 	// DrivesCount is the number of associated drives.
 	DrivesCount int
+	Oem         OemVolume
 	// drives contains references to associated drives.
 	drives []string
+}
+
+type OemVolume struct {
+	Dell struct {
+		DellVirtualDisk struct {
+			ReadCachePolicy  string `json:"ReadCachePolicy"`
+			WriteCachePolicy string `json:"WriteCachePolicy"`
+			DiskCachePolicy  string `json:"DiskCachePolicy"`
+		} `json:"DellVirtualDisk"`
+	} `json:"Dell"`
+	Huawei struct {
+		VolumeRaidLevel    string `json:"VolumeRaidLevel"`
+		CurrentReadPolicy  string `json:"CurrentReadPolicy"`
+		CurrentWritePolicy string `json:"CurrentWritePolicy"`
+		CurrentCachePolicy string `json:"CurrentCachePolicy"`
+	} `json:"Huawei"`
+	H3C struct {
+		VolumeRaidLevel string `json:"VolumeRaidLevel"`
+		ReadPolicy      string `json:"ReadPolicy"`
+		WritePolicy     string `json:"WritePolicy"`
+		DriveCache      string `json:"DriveCache"`
+	} `json:"Public"`
 }
 
 // UnmarshalJSON unmarshals a Volume object from the raw JSON.
