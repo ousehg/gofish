@@ -239,6 +239,7 @@ type Drive struct {
 type OemDrive struct {
 	Dell struct {
 		DellPhysicalDisk struct {
+			Slot       int    `json:"Slot"`
 			RaidStatus string `json:"RaidStatus"`
 		}
 	} `json:"Dell"`
