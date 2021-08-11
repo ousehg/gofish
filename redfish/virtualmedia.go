@@ -132,6 +132,26 @@ type VirtualMedia struct {
 	// SupportsMediaInsert indicates if this implementation supports inserting
 	// virtual media or not (added in schema 1.2.0).
 	SupportsMediaInsert bool
+
+	Oem struct {
+		Huawei struct {
+			EncryptionEnabled bool `json:"EncryptionEnabled"`
+			Actions           struct {
+				VmmControl struct {
+					Target     string `json:"target"`
+					ActionInfo string `json:"@Redfish.ActionInfo"`
+				} `json:"#VirtualMedia.VmmControl"`
+			} `json:"Actions"`
+		} `json:"Huawei"`
+	} `json:"Oem"`
+}
+
+func (VirtualMedia *VirtualMedia) SetEjectMediaTarget(target string) {
+	VirtualMedia.ejectMediaTarget = target
+}
+
+func (VirtualMedia *VirtualMedia) SetInsertMediaTarget(target string) {
+	VirtualMedia.insertMediaTarget = target
 }
 
 // UnmarshalJSON unmarshals a VirtualMedia object from the raw JSON.
@@ -197,33 +217,14 @@ func (virtualmedia *VirtualMedia) Update() error {
 }
 
 // EjectMedia sends a request to eject the media.
-func (virtualmedia *VirtualMedia) EjectMedia() error {
-	if !virtualmedia.SupportsMediaEject {
-		return errors.New("redfish service does not support VirtualMedia.EjectMedia calls")
-	}
-
-	_, err := virtualmedia.Client.Post(virtualmedia.ejectMediaTarget, struct{}{})
+func (virtualmedia *VirtualMedia) EjectMedia(body interface{}) error {
+	_, err := virtualmedia.Client.Post(virtualmedia.ejectMediaTarget, body)
 	return err
 }
 
 // InsertMedia sends a request to insert virtual media.
-func (virtualmedia *VirtualMedia) InsertMedia(image string, inserted, writeProtected bool) error {
-	if !virtualmedia.SupportsMediaInsert {
-		return errors.New("redfish service does not support VirtualMedia.InsertMedia calls")
-	}
-
-	type temp struct {
-		Image          string
-		Inserted       bool
-		WriteProtected bool
-	}
-	t := temp{
-		Image:          image,
-		Inserted:       inserted,
-		WriteProtected: writeProtected,
-	}
-
-	_, err := virtualmedia.Client.Post(virtualmedia.insertMediaTarget, t)
+func (virtualmedia *VirtualMedia) InsertMedia(body interface{}) error {
+	_, err := virtualmedia.Client.Post(virtualmedia.insertMediaTarget, body)
 	return err
 }
 
