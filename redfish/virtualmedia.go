@@ -142,12 +142,12 @@ type VirtualMedia struct {
 					ActionInfo string `json:"@Redfish.ActionInfo"`
 				} `json:"#VirtualMedia.VmmControl"`
 			} `json:"Actions"`
-		} `json:"Huawei"`
-	} `json:"Oem"`
+		} `json:"Huawei,omitempty"`
+	} `json:"Oem,omitempty"`
 
 	Connected struct {
-		Image string `json:"ImageName"`
-	} `json:"Connected"`
+		Image string `json:"ImageName,omitempty"`
+	} `json:"Connected,omitempty"`
 }
 
 func (VirtualMedia *VirtualMedia) SetEjectMediaTarget(target string) {
