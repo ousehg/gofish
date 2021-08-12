@@ -144,6 +144,10 @@ type VirtualMedia struct {
 			} `json:"Actions"`
 		} `json:"Huawei"`
 	} `json:"Oem"`
+
+	Connected struct {
+		Image string `json:"ImageName"`
+	} `json:"Connected"`
 }
 
 func (VirtualMedia *VirtualMedia) SetEjectMediaTarget(target string) {
