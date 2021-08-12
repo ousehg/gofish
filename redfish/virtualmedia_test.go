@@ -142,11 +142,11 @@ func TestVirtualMediaEject(t *testing.T) {
 	testClient := &common.TestClient{}
 	result.SetClient(testClient)
 
-	//err = result.EjectMedia()
-	//
-	//if err != nil {
-	//	t.Errorf("Error making EjectMedia call: %s", err)
-	//}
+	err = result.EjectMedia()
+
+	if err != nil {
+		t.Errorf("Error making EjectMedia call: %s", err)
+	}
 
 	calls := testClient.CapturedCalls()
 
@@ -167,11 +167,11 @@ func TestVirtualMediaInsert(t *testing.T) {
 	testClient := &common.TestClient{}
 	result.SetClient(testClient)
 
-	//err = result.InsertMedia("https://example.com/image", false, true)
-	//
-	//if err != nil {
-	//	t.Errorf("Error making InsertMedia call: %s", err)
-	//}
+	err = result.InsertMedia("https://example.com/image", false, true)
+
+	if err != nil {
+		t.Errorf("Error making InsertMedia call: %s", err)
+	}
 
 	calls := testClient.CapturedCalls()
 
