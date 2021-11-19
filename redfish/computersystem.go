@@ -934,5 +934,5 @@ type WatchdogTimer struct {
 type OemSystem struct {
 	Inspur struct {
 		ConfigurationModel string `json:"ConfigurationModel"`
-	} `json:"inspur"`
+	} `json:"Public"`
 }
