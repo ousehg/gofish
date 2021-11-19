@@ -513,6 +513,8 @@ type ComputerSystem struct {
 	ManagedBy []string
 	// rawData holds the original serialized JSON so we can compare updates.
 	rawData []byte
+	// Oem
+	Oem OemSystem
 }
 
 // UnmarshalJSON unmarshals a ComputerSystem object from the raw JSON.
@@ -927,4 +929,10 @@ type WatchdogTimer struct {
 	// occurs 3-10 seconds prior to the timeout value, but the exact timing
 	// is dependent on the implementation.
 	WarningAction string
+}
+
+type OemSystem struct {
+	Inspur struct {
+		ConfigurationModel string `json:"ConfigurationModel"`
+	} `json:"inspur"`
 }
