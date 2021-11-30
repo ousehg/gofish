@@ -203,6 +203,8 @@ type NetworkAdapter struct {
 	Status common.Status
 	// resetSettingsToDefaultTarget is the URL for sending a ResetSettingsToDefault action
 	resetSettingsToDefaultTarget string
+	// FirmwarePackageVersion is NetworkAdapter firmware version
+	FirmwarePackageVersion string `json:"FirmwarePackageVersion"`
 }
 
 // UnmarshalJSON unmarshals a NetworkAdapter object from the raw JSON.
