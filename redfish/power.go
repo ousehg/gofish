@@ -140,7 +140,7 @@ type Power struct {
 	RedundancyCount int `json:"Redundancy@odata.count"`
 	// Voltages shall be the definition for voltage
 	// sensors for a Redfish implementation.
-	Voltages []Voltage
+	//Voltages []Voltage
 	// VoltagesCount is the number of objects.
 	VoltagesCount int `json:"Voltages@odata.count"`
 }
