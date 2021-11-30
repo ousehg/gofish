@@ -206,14 +206,12 @@ type OemVolume struct {
 		CurrentReadPolicy  string `json:"CurrentReadPolicy"`
 		CurrentWritePolicy string `json:"CurrentWritePolicy"`
 		CurrentCachePolicy string `json:"CurrentCachePolicy"`
-		IOPolice           string `json:"CachePolicy"`
 	} `json:"Huawei"`
 	H3C struct {
 		VolumeRaidLevel string `json:"VolumeRaidLevel"`
 		ReadPolicy      string `json:"ReadPolicy"`
 		WritePolicy     string `json:"WritePolicy"`
 		DriveCache      string `json:"DriveCache"`
-		IOPolicy        string `json:"IOPolicy"`
 	} `json:"Public"`
 }
 
