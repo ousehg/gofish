@@ -18,7 +18,7 @@ var accountServiceBody = `{
 		"@odata.type": "#AccountService.0.94.0.AccountService",
 		"Id": "AccountService",
 		"Name": "Account Service",
-		"Description": "BMC User Accounts ",
+		"Description": "BMC User Accounts",
 		"Modified": "2036-09-11T14:17:21+00:00",
 		"AuthFailureLoggingThreshold": 3,
 		"MinPasswordLength": 8,
