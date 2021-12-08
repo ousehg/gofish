@@ -279,7 +279,7 @@ type Processor struct {
 	// InstructionSet shall contain the string which
 	// identifies the instruction set of the processor contained in this
 	// socket.
-	//InstructionSet InstructionSet
+	// InstructionSet InstructionSet
 	// Links is The Links property, as described by the Redfish
 	// Specification, shall contain references to resources that are related
 	// to, but not contained by (subordinate to), this resource.
