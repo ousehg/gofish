@@ -304,7 +304,7 @@ type Processor struct {
 	Model string
 	// ProcessorArchitecture shall contain the string which
 	// identifies the architecture of the processor contained in this Socket.
-	ProcessorArchitecture ProcessorArchitecture
+	//ProcessorArchitecture ProcessorArchitecture
 	// ProcessorID shall contain identification information for this processor.
 	ProcessorID ProcessorID `json:"ProcessorId"`
 	// ProcessorMemory shall be the memory
@@ -482,7 +482,7 @@ func ListReferencedProcessors(c common.Client, link string) ([]*Processor, error
 type ProcessorID struct {
 	// EffectiveFamily shall indicate the effective Family
 	// information as provided by the manufacturer of this processor.
-	EffectiveFamily string
+	//EffectiveFamily string
 	// EffectiveModel shall indicate the effective Model
 	// information as provided by the manufacturer of this processor.
 	EffectiveModel string
