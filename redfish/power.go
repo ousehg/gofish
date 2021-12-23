@@ -135,7 +135,7 @@ type Power struct {
 	PowerSuppliesCount int `json:"PowerSupplies@odata.count"`
 	// Redundancy shall contain redundancy information for the power subsystem
 	// of this system or device.
-	Redundancy []Redundancy
+	//Redundancy []Redundancy
 	// RedundancyCount is the number of objects.
 	RedundancyCount int `json:"Redundancy@odata.count"`
 	// Voltages shall be the definition for voltage
@@ -377,7 +377,7 @@ type PowerSupply struct {
 	// Redundancy is used to show redundancy for power supplies and other
 	// elements in this resource. The use of IDs within these arrays shall
 	// reference the members of the redundancy groups.
-	Redundancy []Redundancy
+	//Redundancy []Redundancy
 	// RedundancyCount is the number of objects.
 	RedundancyCount int `json:"Redundancy@odata.count"`
 	// SerialNumber shall contain the serial number as
